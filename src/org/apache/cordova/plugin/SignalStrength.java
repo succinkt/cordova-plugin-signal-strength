@@ -15,11 +15,12 @@ public class SignalStrength extends CordovaPlugin {
 @Override
 public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        /*if (action.equals("dbm")) {
-                ssListener = new SignalStrengthStateListener();
+        if (action.equals("dbm")) {
+                /*ssListener = new SignalStrengthStateListener();
                 TelephonyManager tm = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
                 tm.listen(ssListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
-                int counter = 0;
+                int counter = 0;*/
+                resser = signalString();
                 while ( dbm == -1) {
                         try {
                                 Thread.sleep(200);
@@ -31,13 +32,11 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
                                 break;
                         }
                 }
-                callbackContext.success(dbm);
+                callbackContext.success(resser);
                 return true;
-        }*/
+        }
 
-        String answer = signalString();
-
-        return true;
+        return false;
 }
 
 public String signalString(){
@@ -104,6 +103,7 @@ public String signalString(){
                }
                finally{
                    res = "Signal strength: " + dBmlevel + " dBm, "+ asulevel + " asu";
+                   dbm = dBmlevel;
                }
                resser = res;
         return res;
@@ -116,7 +116,7 @@ class SignalStrengthStateListener extends PhoneStateListener {
 public void onSignalStrengthsChanged(android.telephony.SignalStrength signalStrength) {
         super.onSignalStrengthsChanged(signalStrength);
         int tsNormSignalStrength = signalStrength.getGsmSignalStrength();
-        dbm = (2 * tsNormSignalStrength) - 113;     // -> dBm
+        //dbm = (2 * tsNormSignalStrength) - 113;     // -> dBm
         resser = signalString();
 }
 
