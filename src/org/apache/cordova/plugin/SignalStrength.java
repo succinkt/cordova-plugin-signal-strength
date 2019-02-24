@@ -13,7 +13,7 @@ import java.util.*;
 public class SignalStrength extends CordovaPlugin {
 
 @Override
-public String execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
         /*if (action.equals("dbm")) {
                 ssListener = new SignalStrengthStateListener();
@@ -37,7 +37,7 @@ public String execute(String action, JSONArray args, CallbackContext callbackCon
 
         String answer = signalString();
 
-        return answer;
+        return true;
 }
 
 public String signalString(){
@@ -105,6 +105,7 @@ public String signalString(){
                finally{
                    res = "Signal strength: " + dBmlevel + " dBm, "+ asulevel + " asu";
                }
+               resser = res;
         return res;
      }
 
@@ -116,6 +117,7 @@ public void onSignalStrengthsChanged(android.telephony.SignalStrength signalStre
         super.onSignalStrengthsChanged(signalStrength);
         int tsNormSignalStrength = signalStrength.getGsmSignalStrength();
         dbm = (2 * tsNormSignalStrength) - 113;     // -> dBm
+        resser = signalString();
 }
 
 }
@@ -123,5 +125,6 @@ public void onSignalStrengthsChanged(android.telephony.SignalStrength signalStre
 SignalStrengthStateListener ssListener;
 int dbm = -1;
 int signalLevel = -1;
+String resser = "";
 
 }
