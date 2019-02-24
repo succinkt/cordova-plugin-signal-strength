@@ -13,9 +13,9 @@ import java.util.*;
 public class SignalStrength extends CordovaPlugin {
 
 @Override
-public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+public String execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("dbm")) {
+        /*if (action.equals("dbm")) {
                 ssListener = new SignalStrengthStateListener();
                 TelephonyManager tm = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
                 tm.listen(ssListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
@@ -33,9 +33,11 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
                 }
                 callbackContext.success(dbm);
                 return true;
-        }
+        }*/
 
-        return false;
+        String answer = signalString();
+
+        return answer;
 }
 
 public String signalString(){
