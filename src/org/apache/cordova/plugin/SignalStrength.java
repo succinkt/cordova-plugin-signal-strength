@@ -32,7 +32,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
                                 break;
                         }
                 }
-                callbackContext.success(resser);
+                callbackContext.success(dbm);
                 return true;
         }
 
