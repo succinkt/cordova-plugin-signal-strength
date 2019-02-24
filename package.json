@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/petervojtek/cordova-plugin-signal-strength"
+    "url": "https://github.com/succinkt/cordova-plugin-signal-strength"
   },
   "keywords": [
     "gsm",
@@ -29,7 +29,7 @@
   "author": "Peter Vojtek",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/petervojtek/cordova-plugin-signal-strength/issues"
+    "url": "https://github.com/succinkt/cordova-plugin-signal-strength/issues"
   },
-  "homepage": "https://github.com/petervojtek/cordova-plugin-signal-strength"
+  "homepage": "https://github.com/succinkt/cordova-plugin-signal-strength"
 }
