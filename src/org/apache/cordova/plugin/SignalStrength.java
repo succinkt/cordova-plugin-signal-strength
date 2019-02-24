@@ -18,8 +18,8 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         if (action.equals("dbm")) {
                 /*ssListener = new SignalStrengthStateListener();
                 TelephonyManager tm = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
-                tm.listen(ssListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
-                int counter = 0;*/
+                tm.listen(ssListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);*/
+                int counter = 0;
                 resser = signalString();
                 while ( dbm == -1) {
                         try {
