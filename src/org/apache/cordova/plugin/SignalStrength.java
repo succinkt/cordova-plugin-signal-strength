@@ -42,6 +42,7 @@ public String signalString(){
     TelephonyManager tm = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
       int dBmlevel = 0;
       int asulevel = 0;
+      //boolean result = false;
       String res = "";
                try {
                    List<CellInfo> cellInfoList = tm.getAllCellInfo();
@@ -94,7 +95,7 @@ public String signalString(){
                        tm.listen(MyListener, PhoneStateListener.LISTEN_NONE);
                        signalLevel = -1;
                    }
-                   result = true;
+                   //result = true;
                }
                catch (Exception ex){
                    res = "Failed to retrieve signal strength";
