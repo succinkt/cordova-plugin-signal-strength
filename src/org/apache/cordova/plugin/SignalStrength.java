@@ -39,7 +39,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
 }
 
 public String signalStrength(){
-    TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+    TelephonyManager tm = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
       int dBmlevel = 0;
       int asulevel = 0;
       String res = "";
