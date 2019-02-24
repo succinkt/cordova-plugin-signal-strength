@@ -114,10 +114,10 @@ class SignalStrengthStateListener extends PhoneStateListener {
 
 @Override
 public void onSignalStrengthsChanged(android.telephony.SignalStrength signalStrength) {
-        super.onSignalStrengthsChanged(signalStrength);
-        int tsNormSignalStrength = signalStrength.getGsmSignalStrength();
+        //super.onSignalStrengthsChanged(signalStrength);
+        //int tsNormSignalStrength = signalStrength.getGsmSignalStrength();
         //dbm = (2 * tsNormSignalStrength) - 113;     // -> dBm
-        resser = signalString();
+        //resser = signalString();
 }
 
 }
