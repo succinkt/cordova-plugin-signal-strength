@@ -79,7 +79,7 @@ public String signalString(){
                    }
                    else{
                        //Mostly for Samsung devices, after checking if the list is indeed empty.
-                       MyPhoneStateListener MyListener = new MyPhoneStateListener();
+                       SignalStrengthStateListener MyListener = new SignalStrengthStateListener();
                        tm.listen(MyListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
                        int cc = 0;
                        while ( signalLevel == -1){
