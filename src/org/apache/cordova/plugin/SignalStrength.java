@@ -79,7 +79,7 @@ public String signalStrength(){
                    }
                    else{
                        //Mostly for Samsung devices, after checking if the list is indeed empty.
-                       MyListener = new MyPhoneStateListener();
+                       MyPhoneStateListener MyListener = new MyPhoneStateListener();
                        tm.listen(MyListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
                        int cc = 0;
                        while ( signalLevel == -1){
@@ -119,5 +119,6 @@ public void onSignalStrengthsChanged(android.telephony.SignalStrength signalStre
 
 SignalStrengthStateListener ssListener;
 int dbm = -1;
+int signalLevel = -1;
 
 }
